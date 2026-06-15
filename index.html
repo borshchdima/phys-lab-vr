@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>PhysLab VR Project</title>
+    <!-- Використовуємо стабільну версію A-Frame 1.2.0 -->
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <!-- Фізичний двигун, сумісний з A-Frame 1.2.0 -->
+    <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <!-- TensorFlow.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.0.0/dist/tf.min.js"></script>
+</head>
+<body>
+    <a-scene physics="debug: true">
+        <!-- Сфера з фізикою -->
+        <a-sphere id="ball" dynamic-body="mass: 5" position="0 5 -5" radius="0.5" color="red"></a-sphere>
+        
+        <!-- Поверхня (підлога) -->
+        <a-plane static-body rotation="-90 0 0" width="20" height="20" color="#7BC8A4"></a-plane>
+        
+        <!-- Камера -->
+        <a-camera position="0 1.6 0"></a-camera>
+        
+        <!-- Освітлення -->
+        <a-light type="ambient" intensity="0.5"></a-light>
+        <a-light type="directional" position="1 1 1" intensity="0.8"></a-light>
+    </a-scene>
+    
+    <script src="app.js"></script>
+</body>
+</html>
